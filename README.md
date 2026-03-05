@@ -1,26 +1,38 @@
 # ML Internalization Model (LATAM)
 
-This repository now includes an end-to-end, dependency-light pipeline to estimate treaty internalization capacity in LATAM using the datasets in `data/`.
+Este repositorio ahora tiene dos componentes:
 
-## What the pipeline does
+1. **Pipeline de modelado** para estimar capacidad de internalización del tratado.
+2. **Web app interactiva** para explorar escenarios (ej. subir polarización y observar cambio en la probabilidad predicha).
 
-- Builds a panel from SPAR, political, V-Dem, WGI, GDP, health spending, and UHC data.
-- Creates a dynamic outcome: annual change in SPAR legal capacity (`spar_delta`).
-- Converts the outcome to classification target (`spar_delta > 0`).
-- Trains two supervised models with 70/30 train-test split and 5-fold CV hyperparameter selection:
-  - Random Forest
-  - Gradient Boosting Machine (GBM)
-- Reports: accuracy, precision, recall, F1, ROC-AUC.
-- Computes SHAP-like feature contributions (Monte-Carlo Shapley approximation).
-- Runs external validation against tobacco treaty implementation dynamics.
-
-## Run
+## 1) Ejecutar pipeline
 
 ```bash
 python treaty_model_pipeline.py
 ```
 
-## Outputs
+Genera:
+- `outputs/model_results.json`
+- `outputs/model_results.md`
 
-- `outputs/model_results.json`: machine-readable metrics, hyperparameters, top factors.
-- `outputs/model_results.md`: human-readable summary.
+## 2) Ejecutar web app local
+
+```bash
+python web_app.py
+```
+
+Abrir: `http://localhost:8000`
+
+### ¿Qué permite la app?
+- Mover sliders de variables clave (`polariz`, `checks`, `gov_seat_share`, `state_capacity_wgi`, `uhc`, `health_exp_gdp`).
+- Ver la probabilidad estimada de mejora anual en SPAR.
+- Ver curva de sensibilidad dinámica por variable.
+
+## Deploy en Railway
+
+Este proyecto no requiere dependencias externas para correr la web app.
+
+- Railway Start Command: `python web_app.py`
+- Railway usará automáticamente `PORT`.
+
+Opcionalmente puedes usar `Procfile` incluido.
