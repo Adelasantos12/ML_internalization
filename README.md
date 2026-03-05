@@ -36,3 +36,9 @@ Este proyecto no requiere dependencias externas para correr la web app.
 - Railway usará automáticamente `PORT`.
 
 Opcionalmente puedes usar `Procfile` incluido.
+
+
+## Dependencias Python
+
+- Se incluye `requirements.txt` en la raíz para compatibilidad con deploy platforms como Railway.
+- La app usa solo librerías estándar de Python (sin paquetes externos obligatorios).
