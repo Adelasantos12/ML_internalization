@@ -1,0 +1,2 @@
+# No external Python dependencies are required.
+# This file is intentionally minimal for Railway/Python detection.
