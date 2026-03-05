@@ -1,0 +1,74 @@
+{
+  "dataset": {
+    "observations": 237,
+    "train_size": 165,
+    "test_size": 72,
+    "positive_rate": 0.2278
+  },
+  "best_hyperparameters": {
+    "random_forest": {
+      "n_estimators": 120,
+      "max_depth": 4
+    },
+    "gbm": {
+      "n_estimators": 120,
+      "learning_rate": 0.08
+    }
+  },
+  "metrics": {
+    "random_forest": {
+      "accuracy": 0.75,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.4754
+    },
+    "gbm": {
+      "accuracy": 0.8056,
+      "precision": 0.5,
+      "recall": 0.0714,
+      "f1": 0.125,
+      "roc_auc": 0.5234
+    }
+  },
+  "selected_model": "gbm",
+  "top_factors_shap": {
+    "yrsoffc": 0.0367944530400217,
+    "health_exp_gdp": 0.036038718681447326,
+    "rl_est": 0.02504652760458218,
+    "gov_seat_share": 0.02097803005530239,
+    "uhc": 0.019988589372577248,
+    "checks": 0.014130967258062814,
+    "log_gdp_pc": 0.006343937831898443,
+    "cc_est": 0.005600512843537886,
+    "rq_est": 0.0024895652102685396,
+    "state_capacity_wgi": 0.002154929757142722
+  },
+  "external_validation_tobacco_auc": 0.351,
+  "imputation_means": {
+    "pres_election_year": 0.19745222929936307,
+    "leg_election_year": 0.24203821656050956,
+    "yrsoffc": 4.146496815286624,
+    "exec_turnover": 0.18471337579617833,
+    "gov_seat_share": 0.42248329931586803,
+    "gov_majority": 0.36942675159235666,
+    "oppmajh": 0.11920529801324503,
+    "checks": 3.2738853503184715,
+    "polariz": 0.6515151515151515,
+    "years_since_pres_election": 1.9712230215827338,
+    "years_since_leg_election": 1.6054421768707483,
+    "v2xlg_legcon": 0.6279652173913043,
+    "v2edideol_mean": 1.5046503496503487,
+    "v2cacamps": 0.43886521739130413,
+    "cc_est": -0.4213089379262672,
+    "ge_est": -0.2826209309631336,
+    "pv_est": -0.18861513005069133,
+    "rq_est": -0.1916521883963135,
+    "rl_est": -0.48869467200460814,
+    "va_est": 0.12710290170506927,
+    "state_capacity_wgi": -0.34606918232258077,
+    "log_gdp_pc": 8.844039286375041,
+    "health_exp_gdp": 7.321915247042254,
+    "uhc": 75.31797235023042
+  }
+}
